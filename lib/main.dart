@@ -1,6 +1,8 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
+const imagePath = "assets/images/";
+
 void main() {
   runApp(const MaterialApp(
     home: Scaffold(
@@ -14,19 +16,9 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list = generateWordPairs().take(5).toList();
-    final wordTexts = list
-        .map((word) => Text(
-              word.asString,
-              style: const TextStyle(fontSize: 22, color: Colors.blue),
-            ))
-        .toList();
+
     return SafeArea(
-        child: SizedBox(
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: wordTexts,
-            )));
+        child: SingleChildScrollView(child: Center(child: Image.asset("$imagePath/image.jpg"),))
+    );
   }
 }
